@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loginPage">
+        <h1>CHAT</h1>
+        
+        <div class="form-group">
+            <label for="loginNameInput">Digite seu nome:</label>
+            <input type="text" id="loginNameInput" placeholder="Seu nome">
+        </div>
+        
+        <div class="form-group">
+            <label for="roomSelect">Escolha a sala:</label>
+            <select id="roomSelect">
+                <option value="" disabled selected>Selecione uma sala</option>
+                <option value="Sala1">Sala 1</option>
+                <option value="Sala2">Sala 2</option>
+                <option value="Sala3">Sala 3</option>
+            </select>
+        </div>
+        
+        <button id="enterRoomButton">Entrar</button>
+    </div>
+
+    <div id="chatPage" style="display: none;">
+        <button id="leaveRoomButton">Sair</button> 
+              
+        <div class="chatHeader">
+            <h1>Chat - <span id="roomName"></span></h1>
+        </div>
+    
+        <div class="chatContent">
+            <div class="userListContainer">
+                <ul class="userList"></ul>
+            </div>
+    
+            <div class="chatAreaContainer">
+                <div id="chatArea"></div>
+                
+                <div class="messageInput">
+                    <input type="text" id="chatTextInput" placeholder="Digite sua mensagem...">
+                    <button id="sendMessageButton">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
